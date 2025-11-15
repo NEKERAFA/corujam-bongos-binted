@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq8bmybs1dae7"]
+
+[ext_resource type="Texture2D" uid="uid://bqbk7ttd87e27" path="res://icon.svg" id="1_8tfd5"]
+[ext_resource type="Script" uid="uid://dxvr66d07ojre" path="res://scenes/worm/worm_part.gd" id="1_kre42"]
+
+[node name="WormPart" type="Node2D"]
+script = ExtResource("1_kre42")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8tfd5")
