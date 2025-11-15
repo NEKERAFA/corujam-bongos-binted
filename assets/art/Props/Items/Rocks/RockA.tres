@@ -22,7 +22,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"break",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -30,5 +30,5 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }]
