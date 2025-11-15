@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl782fdmkc6b4"]
 
 [ext_resource type="Texture2D" uid="uid://bqbk7ttd87e27" path="res://icon.svg" id="1_o34ws"]
-[ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scenes/camera_controller.gd" id="2_pssa7"]
+[ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scripts/camera_controller.gd" id="2_pssa7"]
 
 [node name="Example" type="Node"]
 
