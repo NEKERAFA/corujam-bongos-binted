@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	#change scene
-	get_tree().paused= false
 	get_tree().change_scene_to_file("res://scenes/mocked_game_controller/mocked_game_controller.tscn")
 	pass # Replace with function body.
 
@@ -40,7 +39,4 @@ func _on_button_3_pressed() -> void:
 func _on_button_4_pressed() -> void:
 	#exit game
 	get_tree().quit()
-	pass # Replace with function body.
-
-
 	pass # Replace with function body.
