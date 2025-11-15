@@ -6,11 +6,10 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	var spawn_y = rng.randi_range(300, 520)
 	var projectile : Projectile = projectile_node.instantiate()
-	projectile.speed = 20
+	projectile.speed = 200
 	add_child(projectile)
 	projectile.position = Vector2(980, spawn_y)
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
