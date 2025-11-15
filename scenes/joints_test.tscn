@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://1y8te2qerfb2"]
+
+[ext_resource type="Texture2D" uid="uid://bqbk7ttd87e27" path="res://icon.svg" id="1_f0dv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irh7e"]
+size = Vector2(132, 130)
+
+[node name="JointsTest" type="Node2D"]
+
+[node name="Head" type="CharacterBody2D" parent="."]
+position = Vector2(353, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
+shape = SubResource("RectangleShape2D_irh7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Head"]
+texture = ExtResource("1_f0dv1")
+
+[node name="Mid1" type="RigidBody2D" parent="Head"]
+position = Vector2(-133, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Mid1"]
+shape = SubResource("RectangleShape2D_irh7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/Mid1"]
+texture = ExtResource("1_f0dv1")
+
+[node name="Mid2" type="RigidBody2D" parent="Head"]
+position = Vector2(-265, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Mid2"]
+shape = SubResource("RectangleShape2D_irh7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/Mid2"]
+texture = ExtResource("1_f0dv1")
+
+[node name="Tail" type="RigidBody2D" parent="Head"]
+position = Vector2(-397, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Tail"]
+shape = SubResource("RectangleShape2D_irh7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/Tail"]
+texture = ExtResource("1_f0dv1")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(289, 73)
+node_a = NodePath("../Head")
+node_b = NodePath("../Head/Mid1")
+bias = 0.9
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(156, 73)
+node_a = NodePath("../Head/Mid1")
+node_b = NodePath("../Head/Mid2")
+bias = 0.9
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(24, 73)
+node_a = NodePath("../Head/Mid2")
+node_b = NodePath("../Head/Tail")
+bias = 0.9
