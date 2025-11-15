@@ -1,8 +1,10 @@
 extends Camera2D
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_pressed('ui_up'):
-		position.y -= 128 * delta
-	elif Input.is_action_pressed('ui_down'):
-		position.y += 128 * delta
+@export
+var player: Node2D
+
+
+func _process(_delta: float) -> void:
+	if player != null:
+		position = player.get_node('Player').global_position
