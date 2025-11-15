@@ -9,8 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Panel/VBoxContainer/HBoxContainer/Label2.text=distance
-	$Panel/VBoxContainer/HBoxContainer2/Label2.text=height
+	$Panel/VBoxContainer/HBoxContainer/Label2.text = str(distance)
+	$Panel/VBoxContainer/HBoxContainer2/Label2.text = str(height)
 	pass
 
 

@@ -14,11 +14,9 @@ func _ready() -> void:
 	if(1==1):
 		#Change sprite to enemy
 		print_debug("Enemy")
-		$AnimatedSprite2D.modulate="#ff0000"
 	else:
 		#change sprite to friend
 		print_debug("Friend")
-		$AnimatedSprite2D.modulate="#00ff00"
 	pass # Replace with function body.
 
 
@@ -27,3 +25,18 @@ func _process(delta: float) -> void:
 	if(global_position.x<-100):
 		queue_free()
 	pass
+
+func _on_body_entered(body: Node) -> void:
+	if body is Worm:
+		$AnimatedSprite2D.play("break")
+	pass # Replace with function body.
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation=="break" :
+		if type==ProjectileTypeEnum.ENEMY:
+			GameManager.downgrade_movement()
+		else:
+			GameManager.upgrade_movement()
+		queue_free()
+	pass # Replace with function body.
