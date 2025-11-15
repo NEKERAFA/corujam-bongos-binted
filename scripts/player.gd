@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 const MAX_ANGLE: float = 45
-const MAX_SPEED: float = 200.0
+const MAX_SPEED: float = 250.0
 const TIME_MAX_SPEED: float = 0.5
 const TURN_SPEED: float = 2500.0
+
+func get_angle() -> float:
+	return (velocity.y * MAX_ANGLE) / MAX_SPEED
 
 func _physics_process(delta: float) -> void:
 
@@ -17,7 +20,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, MAX_SPEED, delta * TURN_SPEED)
 	else:
 		velocity.y = move_toward(velocity.y, 0, delta * TURN_SPEED)
-
+	rotation = deg_to_rad(get_angle())
 	move_and_slide()
 
 #func velocity_accel(vertical_velocity: float, target_speed: float, delta: float) -> float:
