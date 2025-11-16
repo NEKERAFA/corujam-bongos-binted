@@ -26,10 +26,11 @@ script = ExtResource("3_7w8s4")
 player = NodePath("../Player")
 
 [node name="Player" parent="PlayerLayer" instance=ExtResource("2_7w8s4")]
-position = Vector2(960, 540)
+position = Vector2(960, 291)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(960, 540)
+offset = Vector2(200, 0)
 limit_bottom = 1620
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0

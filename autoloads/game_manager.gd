@@ -1,7 +1,7 @@
 extends Node
 
 
-var movement: int = -128
+var movement: int = -500#-128
 const MOVEMENT_INCREASE : int = 100
 const MIN_MOVEMENT:int=100
 
