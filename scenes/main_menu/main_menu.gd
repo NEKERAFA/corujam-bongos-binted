@@ -2,7 +2,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$FirstScreen/BoxContainer/Start/VBoxContainer/No.visible = !OS.has_feature("web")
+	$SecondScreen/VBoxContainer/Exit.visible = !OS.has_feature("web")
 	GameManager.main_menu_music.emit()
 
 
