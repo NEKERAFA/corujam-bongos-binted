@@ -9,6 +9,9 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_ehkds")
+}, {
+"duration": 1.0,
 "texture": ExtResource("1_pcegf")
 }, {
 "duration": 1.0,
