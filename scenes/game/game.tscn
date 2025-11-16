@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cp7su6couqxll" path="res://scenes/end_game_menu/end_game_menu.tscn" id="7_87uf6"]
 [ext_resource type="PackedScene" uid="uid://d074aontaxdo0" path="res://scenes/pause_menu/pause_menu.tscn" id="8_2a8rs"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" node_paths=PackedStringArray("player")]
 script = ExtResource("1_lfrn8")
+player = NodePath("PlayerLayer/Player")
 
 [node name="ScenarioLayer" parent="." instance=ExtResource("2_5i0tg")]
 follow_viewport_enabled = true
@@ -24,6 +25,28 @@ follow_viewport_enabled = true
 [node name="PlayerLayer" type="CanvasLayer" parent="."]
 layer = 3
 follow_viewport_enabled = true
+
+[node name="HeightMark" type="Line2D" parent="PlayerLayer"]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(0, 0, 128, 0)
+width = 2.0
+default_color = Color(0.9098039, 0.5019608, 0.9019608, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="HeightLabel" type="Label" parent="PlayerLayer/HeightMark"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 83.0
+offset_top = -48.0
+offset_right = 129.0
+offset_bottom = -5.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "0 cm"
+horizontal_alignment = 2
 
 [node name="PlayerTrail" type="Line2D" parent="PlayerLayer" node_paths=PackedStringArray("player")]
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

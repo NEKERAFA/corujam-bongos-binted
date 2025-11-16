@@ -3,9 +3,13 @@ extends Node
 @onready var end_game_menu := $UILayer/EndGameMenu
 @onready var pause_menu := $UILayer/PauseMenu
 
+@export
+var player: Node2D = null
+
+
 func _ready() -> void:
-	GameManager.max_height_reached.connect(_max_height_reached)
 	GameManager.game_is_started = true
+	GameManager.max_height_reached.connect(_on_max_height_reached)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -14,7 +18,13 @@ func _process(delta: float) -> void:
 		pause_menu.visible= get_tree().paused
 	pass
 
-func _max_height_reached(height: float) -> void:
+
+func _on_max_height_reached(height: float) -> void:
+	if player != null and not %HeightMark.visible:
+		%HeightMark.position.x = player.get_node('Player').global_position.x - 64
+		%HeightMark.position.y = height
+		%HeightMark.show()
+		%HeightMark.get_node("HeightLabel").text = "%d cm" % (-height)
 	end_game_menu.height = height
 	end_game_menu.distance = GameManager.distance_traveled
 	var timer_to_end := Timer.new()
