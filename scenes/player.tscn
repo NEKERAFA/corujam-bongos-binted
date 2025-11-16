@@ -50,9 +50,9 @@ tracks/0/path = NodePath("JumpLabel:theme_override_font_sizes/font_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0),
-"points": PackedFloat32Array(16, 0, 0, 0.033333335, 1.0560894, 32, -0.1834091, 0.118637085, 0.18325758, -0.17102814, 16, -0.0333333, 1.0560894, 0, 0),
-"times": PackedFloat32Array(0, 0.75007576, 1.5)
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(12, 0, 0, 0.033333335, 3.8530731, 20, -0.121388316, -0.07726288, 0.11666673, 0.07425761, 12, -0.0333333, 3.8530731, 0, 0),
+"times": PackedFloat32Array(0, 0.75, 1.5)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3v2ag"]
