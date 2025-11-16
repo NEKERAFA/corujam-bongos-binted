@@ -97,3 +97,16 @@ func get_angle() -> float:
 func update_worm_parts() -> void:
 	for _worm_part in worm_array:
 		_worm_part.update_position()
+
+
+func eat():
+	$AnimationSprite2D.play("eat")
+
+
+func hit():
+	$AnimationSprite2D.play("hit")
+
+
+func _on_animation_finished() -> void:
+	if $AnimationSprite2D.animation != "walk":
+		$AnimationSprite2D.play("walk")

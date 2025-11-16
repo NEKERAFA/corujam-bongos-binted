@@ -40,7 +40,12 @@ func _on_body_entered(body: Node) -> void:
 		has_broken=true
 		self.set_freeze_enabled.call_deferred(true)
 		$AnimatedSprite2D.play("break")
-	pass # Replace with function body.
+		
+		match type:
+			ProjectileTypeEnum.ENEMY:
+				(body as Worm).hit()
+			ProjectileTypeEnum.FRIEND:
+				(body as Worm).eat()
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -50,4 +55,3 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		else:
 			GameManager.upgrade_movement()
 		queue_free()
-	pass # Replace with function body.
