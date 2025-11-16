@@ -12,31 +12,34 @@
 script = ExtResource("1_w4sjf")
 
 [node name="Sky" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, -800)
 repeat_size = Vector2(1024, 0)
-repeat_times = 2
+repeat_times = 5
+follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
-position = Vector2(960, -600)
 texture = ExtResource("2_dbp2g")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sky"]
-position = Vector2(960, -1480)
+position = Vector2(0, -880)
 texture = ExtResource("3_ehepe")
 
 [node name="Middle" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, -640)
 repeat_size = Vector2(1024, 0)
-repeat_times = 2
+repeat_times = 5
+follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Middle"]
-position = Vector2(960, -512)
 texture = ExtResource("3_koqek")
 
-[node name="Font" type="Parallax2D" parent="."]
+[node name="Front" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, -512)
 repeat_size = Vector2(1024, 0)
-repeat_times = 2
+repeat_times = 5
+follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Font"]
-position = Vector2(960, -409)
+[node name="Sprite2D" type="Sprite2D" parent="Front"]
 texture = ExtResource("4_ehepe")
 
 [node name="Underground" type="Parallax2D" parent="."]
@@ -48,9 +51,8 @@ position = Vector2(960, 512)
 texture = ExtResource("3_5eukr")
 
 [node name="Ground" type="Parallax2D" parent="."]
-scroll_offset = Vector2(0, 56)
-repeat_size = Vector2(128, 0)
-repeat_times = 16
+repeat_size = Vector2(1024, 0)
+repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 position = Vector2(960, 0)
