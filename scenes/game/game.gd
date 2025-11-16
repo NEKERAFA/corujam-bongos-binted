@@ -25,7 +25,7 @@ func _on_max_height_reached(height: float) -> void:
 		%HeightMark.position.x = player.get_node('Player').global_position.x - 64
 		%HeightMark.position.y = height
 		%HeightMark.show()
-		%HeightMark.get_node("HeightLabel").text = "%d cm" % (-height)
+		%HeightMark.get_node("HeightLabel").text = "%.2f m" % (-height / 100)
 	end_game_menu.height = height
 	end_game_menu.distance = GameManager.distance_traveled
 	var timer_to_end := Timer.new()
