@@ -18,10 +18,10 @@ func _ready() -> void:
 		var ranking = []
 		for player in _config.get_sections():
 			ranking.append({
-				player = player,
+				player = player.substr(0, 20),
 				points = float(_config.get_value(player, "points"))
 			})
-		ranking.sort_custom(func(a, b): return a.score > b.score)
+		ranking.sort_custom(func(a, b): return a.points > b.points)
 
 		for score in ranking:
 			if scores == 0:
@@ -44,7 +44,7 @@ func set_height(height: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	var player : String = player_input.text.strip_edges()
+	var player : String = player_input.text.strip_edges().substr(0, 20)
 	if player.is_empty():
 		player = "Gusanito"
 	

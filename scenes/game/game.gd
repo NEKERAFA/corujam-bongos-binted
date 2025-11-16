@@ -33,7 +33,7 @@ func _on_max_height_reached(height: float) -> void:
 		%HeightMark.position.x = player.get_node('Player').global_position.x - 128
 		%HeightMark.position.y = height
 		%HeightMark.show()
-		%HeightMark.get_node("HeightLabel").text = "%.2f m" % (-height / 100)
+		%HeightMark.get_node("HeightLabel").text = "%.2f cm" % (-height / 100)
 	end_game_menu.height = height
 	end_game_menu.distance = GameManager.distance_traveled
 	var timer_to_end := Timer.new()
@@ -46,7 +46,7 @@ func _on_max_height_reached(height: float) -> void:
 
 func _on_player_jumped() -> void:
 	%EarthOut.position = player.get_node('Player').global_position
-	%EarthOut.position.y -= Globals.min_depth
+	%EarthOut.position.y -= Globals.min_depth + 32
 	%EarthOut.show()
 
 func _open_end_menu():

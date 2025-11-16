@@ -19,7 +19,7 @@ var worm_array: Array[WormPart] = []
 ## Margin for the jump button prompt to appear
 var jump_margin: float = 50.0
 ## Movement speed multiplier when jumping
-var jump_multiplier: float = 3
+var jump_multiplier: float = 1.8
 
 var is_jumping: bool = false
 var started_falling: bool = false
@@ -78,10 +78,17 @@ func _physics_process(delta: float) -> void:
 	worm_part_data.rotations_array.insert(0, rotation)
 	update_worm_parts()
 
+func calculate_jump_speed(height: float, time_to_peak: float) -> float:
+	return (2.0 * height) / time_to_peak
+
+func calculate_jump_gravity(height: float, time_to_peak: float) -> float:
+	return (2.0 * height) / pow(time_to_peak, 2.0)
+
 func start_jump() -> void:
 	jumped.emit()
+	#velocity.y = 500 -log(-GameManager.movement - 50) * jump_multiplier
+	velocity.y = (GameManager.movement * jump_multiplier) - 200
 	GameManager.jump_sound.emit()
-	velocity.y = GameManager.movement * jump_multiplier
 
 func can_jump() -> bool:
 	return not is_jumping and (global_position.y <= Globals.min_depth + jump_margin)
