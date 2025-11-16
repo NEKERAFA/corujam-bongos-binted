@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			if not started_falling:
 				started_falling = true
-				max_height_reached.emit(global_position.y)
+				max_height_reached.emit(global_position.y - 32)
 				get_viewport().get_camera_2d().player = null
 		velocity.y += get_gravity().y * delta
 		rotation = deg_to_rad(get_angle())
