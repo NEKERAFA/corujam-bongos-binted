@@ -12,7 +12,8 @@
 script = ExtResource("1_w4sjf")
 
 [node name="Sky" type="Parallax2D" parent="."]
-scroll_offset = Vector2(0, -800)
+scroll_scale = Vector2(1, 0)
+scroll_offset = Vector2(0, -792.235)
 repeat_size = Vector2(1024, 0)
 repeat_times = 5
 follow_viewport = false
@@ -25,6 +26,7 @@ position = Vector2(0, -880)
 texture = ExtResource("3_ehepe")
 
 [node name="Middle" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1, 0.1)
 scroll_offset = Vector2(0, -640)
 repeat_size = Vector2(1024, 0)
 repeat_times = 5
@@ -34,7 +36,8 @@ follow_viewport = false
 texture = ExtResource("3_koqek")
 
 [node name="Front" type="Parallax2D" parent="."]
-scroll_offset = Vector2(0, -512)
+scroll_scale = Vector2(1, 0.1)
+scroll_offset = Vector2(0, -391)
 repeat_size = Vector2(1024, 0)
 repeat_times = 5
 follow_viewport = false
