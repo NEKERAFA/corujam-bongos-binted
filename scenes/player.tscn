@@ -19,7 +19,7 @@ content_margin_left = 20.0
 content_margin_top = 20.0
 content_margin_right = 20.0
 content_margin_bottom = 20.0
-bg_color = Color(0.9022951, 0.3640555, 0.7430142, 1)
+bg_color = Color(1, 0.6392157, 1, 1)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
@@ -122,18 +122,19 @@ unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -285.0
+offset_left = -60.5
+offset_top = -135.52
+offset_right = 60.5
+offset_bottom = -41.520004
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ur7pv")
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ur7pv")
-text = "SALTA
-<Espacio>"
+text = "Salta!"
 horizontal_alignment = 1
 vertical_alignment = 1
-uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="JumpLabel"]
 root_node = NodePath("../..")

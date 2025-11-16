@@ -6,6 +6,7 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 
 	$AnimationPlayer.play("yuhu_animation")
+	$tutorialAnimation.play("tutorial")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

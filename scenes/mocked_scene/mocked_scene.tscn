@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddcfl3r22fbd8"]
+[gd_scene load_steps=8 format=3 uid="uid://ddcfl3r22fbd8"]
 
 [ext_resource type="Script" uid="uid://drhhtx7kmn0yb" path="res://scenes/mocked_scene/mocked_scene.gd" id="1_ixuk2"]
-[ext_resource type="PackedScene" uid="uid://e833sirjobbp" path="res://scenes/projectile_controller/projectile_controller.tscn" id="2_03rey"]
 
 [sub_resource type="Animation" id="Animation_03rey"]
 length = 0.001
@@ -40,10 +39,49 @@ _data = {
 &"yuhu_animation": SubResource("Animation_ixuk2")
 }
 
+[sub_resource type="Animation" id="Animation_cerkn"]
+resource_name = "tutorial"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tutorial_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d1aaw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tutorial_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8rus"]
+_data = {
+&"RESET": SubResource("Animation_d1aaw"),
+&"tutorial": SubResource("Animation_cerkn")
+}
+
 [node name="MockedScene" type="Node"]
 script = ExtResource("1_ixuk2")
 
-[node name="Label" type="Label" parent="."]
+[node name="tutorial_label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -56,7 +94,10 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Estamos en partida ole"
+theme_override_font_sizes/font_size = 30
+text = "Consigue velocidad comiendo hojas, evita las rocas y cuando estés lista
+ sube a la superficie y salta con <Espacio>"
+horizontal_alignment = 1
 
 [node name="yuhu_label" type="Label" parent="."]
 offset_right = 79.00014
@@ -69,5 +110,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_cerkn")
 }
 
-[node name="ProjectileController" parent="." instance=ExtResource("2_03rey")]
-position = Vector2(0, 520)
+[node name="tutorialAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g8rus")
+}
