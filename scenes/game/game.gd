@@ -13,12 +13,15 @@ func _ready() -> void:
 	$UILayer/Control/TutorialAnimation.play("tutorial")
 	GameManager.game_is_started = true
 	GameManager.max_height_reached.connect(_on_max_height_reached)
+	GameManager.level_music.emit()
+	GameManager.movement_sound.emit()
 	(player.get_node("Player") as Worm).jumped.connect(_on_player_jumped)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause_input"):
+		GameManager.level_music.emit(get_tree().paused)
 		get_tree().paused= !get_tree().paused
 		pause_menu.visible= get_tree().paused
 	pass
@@ -26,7 +29,7 @@ func _process(delta: float) -> void:
 
 func _on_max_height_reached(height: float) -> void:
 	if player != null and not %HeightMark.visible:
-		%HeightMark.position.x = player.get_node('Player').global_position.x - 256
+		%HeightMark.position.x = player.get_node('Player').global_position.x - 128
 		%HeightMark.position.y = height
 		%HeightMark.show()
 		%HeightMark.get_node("HeightLabel").text = "%.2f cm" % (-height / 100)

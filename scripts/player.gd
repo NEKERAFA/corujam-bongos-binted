@@ -88,6 +88,7 @@ func start_jump() -> void:
 	jumped.emit()
 	#velocity.y = 500 -log(-GameManager.movement - 50) * jump_multiplier
 	velocity.y = (GameManager.movement * jump_multiplier) - 200
+	GameManager.jump_sound.emit()
 
 func can_jump() -> bool:
 	return not is_jumping and (global_position.y <= Globals.min_depth + jump_margin)
