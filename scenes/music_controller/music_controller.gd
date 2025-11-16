@@ -24,6 +24,7 @@ func play_button_sound():
 	$button_music.play(0.0)
 	
 func play_jump_sound():
+	$jump_sound_2.play()
 	$jump_sound.play()
 	
 func play_movement_sound():
