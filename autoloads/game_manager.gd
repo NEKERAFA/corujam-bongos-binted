@@ -9,7 +9,7 @@ func get_velocity() -> Vector2:
 	return Vector2.RIGHT * float(movement)
 
 func upgrade_movement():
-	movement = clamp(movement+MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
+	movement = clamp(movement-MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
 	
 func downgrade_movement():
-	movement = clamp(movement-MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
+	movement = clamp(movement+MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
