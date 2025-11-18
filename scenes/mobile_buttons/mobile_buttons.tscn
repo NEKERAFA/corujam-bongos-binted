@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cru5uuc60dii5"]
+
+[ext_resource type="Script" uid="uid://c1cvgxbgknxah" path="res://scenes/mobile_buttons/mobile_buttons.gd" id="1_lxnvt"]
+[ext_resource type="Texture2D" uid="uid://dom2tmm32nvec" path="res://assets/keyboard_arrow_down.png" id="2_uwojm"]
+[ext_resource type="Texture2D" uid="uid://cloqldckcaqv3" path="res://assets/keyboard_arrow_up.png" id="3_m0oh6"]
+[ext_resource type="Texture2D" uid="uid://b1tgrys41cglc" path="res://assets/art/keyboard_space.png" id="4_cmq5v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ftsea"]
+radius = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_otnwt"]
+radius = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xj4h"]
+radius = 48.0
+
+[node name="MobileButtons" type="CanvasLayer"]
+layer = 99
+follow_viewport_scale = 0.5
+script = ExtResource("1_lxnvt")
+
+[node name="Up" type="TouchScreenButton" parent="."]
+z_index = 98
+position = Vector2(1008, 110)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_m0oh6")
+shape = SubResource("CircleShape2D_ftsea")
+action = "up"
+visibility_mode = 1
+
+[node name="Down" type="TouchScreenButton" parent="."]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_uwojm")
+shape = SubResource("CircleShape2D_otnwt")
+action = "down"
+visibility_mode = 1
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_cmq5v")
+shape = SubResource("CircleShape2D_3xj4h")
+action = "jump"
+visibility_mode = 1
